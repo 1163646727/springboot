@@ -1,0 +1,74 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.pri</groupId>
+  <artifactId>springboot</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+    <!-- 引入springbootMaven依赖 -->
+    <!-- 
+    	spring-boot-starter-parent作用
+		在pom.xml中引入spring-boot-start-parent,
+		spring官方的解释叫什么stater poms,它可以提供dependency management,
+		也就是说依赖管理，引入以后在申明其它dependency的时候就不需要version了
+     -->
+    <parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.0.0.RELEASE</version>
+	</parent>
+	
+	<dependencies>
+		<!-- springboot 整合web组件 整合springMVC 就会把传统方式的SpringMVC依赖的jar全部下载下来 -->
+		<!-- 引入spring-boot-starter-web 帮你整合好所有相关的依赖jar包 
+			 原理：maven依赖传递，相当于在spring-boot-starter-parent中整合相关jar依赖信息
+		-->
+		<!-- springboot-web组件 -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		<!-- 引入freeMarker的依赖包. -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-freemarker</artifactId>
+		</dependency>
+		
+		<!-- jdbcTemplate 依赖 -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-jdbc</artifactId>
+		</dependency>
+		<!-- mysql 依赖 -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+		</dependency>
+		<!-- 测试 -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		
+		<!-- 添加lombok依赖,让代码更简洁 -->
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+		</dependency>
+		
+		<!-- springboot 整合 pagehelper -->
+		<dependency>
+			<groupId>com.github.pagehelper</groupId>
+			<artifactId>pagehelper-spring-boot-starter</artifactId>
+			<version>1.2.5</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+			<version>3.7</version>
+		</dependency>
+		
+
+	  </dependencies> 
+	  
+	  
+</project>
