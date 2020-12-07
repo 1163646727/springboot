@@ -2,6 +2,7 @@ package com.pri.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
  * class name:HelloController <BR>
@@ -18,6 +19,13 @@ public class HelloController {
     public String page(){
     	System.out.println("跳转index.html");
         return "index"; //fang
+    }
+
+    @ResponseBody
+    @RequestMapping("/hello")
+    public String hello(){
+        System.out.println("控制台打印：hello,这是一个测试接口");
+        return "hello,这是一个测试接口";
     }
 
 }
